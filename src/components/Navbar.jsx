@@ -9,16 +9,14 @@ const Navbar = () => {
   const menuRef = useRef();
   const linkRefs = useRef([]);
 
-  // 1. Handle Scroll State
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 0);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // 2. Animate Mobile Menu
   useGSAP(() => {
     if (isMobileMenuOpen) {
       gsap.to(menuRef.current, {
@@ -54,13 +52,13 @@ const Navbar = () => {
         className={`fixed top-0 left-0 w-full px-6 py-4 z-50 transition-all duration-300 ${
           isScrolled || isMobileMenuOpen
             ? "bg-black/90 backdrop-blur-md border-b border-white/10 shadow-lg" 
-            : "bg-transparent py-6"
+            : "bg-black py-4"
         }`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           
           {/* Logo */}
-          <a href="#hero" className="text-2xl font-cyber font-bold tracking-tighter cursor-pointer text-white z-50">
+          <a href="hero" className="text-2xl font-cyber font-bold tracking-tighter cursor-pointer text-white z-50">
             CYBER<span className="text-green-400">FEST</span>
           </a>
 

@@ -7,8 +7,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        cyber: ['"JetBrains Mono"'], // For Headings
-        code: ['"JetBrains Mono"'], // For small text/details
+        cyber: ['"Orbitron"', 'sans-serif'],
+        
+        // 2. For Hacker/Terminal text (JetBrains Mono)
+        code: ['"JetBrains Mono"', 'monospace'],
       },
       backgroundImage: {
         'hero-pattern': "url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop')",
